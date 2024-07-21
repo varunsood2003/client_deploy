@@ -16,7 +16,7 @@ function ProfileUpdatePage() {
     const { username, email, password } = Object.fromEntries(formData);
     try {
       const res = await axios.put(
-        `http://localhost:8800/api/users/${currentUser.id}`,
+        `https://api-deploy-j18f.onrender.com/api/users/${currentUser.id}`,
         {
           username,
           email,

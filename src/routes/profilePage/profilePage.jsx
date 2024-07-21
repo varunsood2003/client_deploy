@@ -15,7 +15,7 @@ function ProfilePage() {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:8800/api/auth/logout");
+      await axios.post("https://api-deploy-j18f.onrender.com/api/auth/logout");
       updateUser(null);
       navigate("/");
     } catch (err) {

@@ -15,7 +15,7 @@ function Login() {
     const password = formData.get("password");
     try {
       const res = await axios.post(
-        "http://localhost:8800/api/auth/login",
+        "https://api-deploy-j18f.onrender.com/api/auth/login",
         {
           username,
           password,

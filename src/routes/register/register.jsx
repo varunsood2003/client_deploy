@@ -14,7 +14,7 @@ function Register() {
     const email = formData.get("email");
     const password = formData.get("password");
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/register",{
+      const res = await axios.post("https://api-deploy-j18f.onrender.com/api/auth/register",{
         username,email,password
       })
       //console.log(res.data);

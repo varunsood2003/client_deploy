@@ -22,7 +22,7 @@ function SinglePage() {
     } 
     setSaved((prev)=>!prev);
     try {
-        await axios.post("http://localhost:8800/api/users/save",{postId: post.id},{ withCredentials: true })
+        await axios.post("https://api-deploy-j18f.onrender.com/api/users/save",{postId: post.id},{ withCredentials: true })
     } catch (error) {
       console.log(error);
       setSaved((prev)=>!prev);

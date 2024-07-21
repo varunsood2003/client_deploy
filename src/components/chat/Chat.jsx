@@ -18,7 +18,7 @@ function Chat({ chats }) {
 
   const handleOpenChat = async (id, receiver) => {
     try {
-      const res = await axios.get(`http://localhost:8800/api/chats/${id}`);
+      const res = await axios.get(`https://api-deploy-j18f.onrender.com/api/chats/${id}`);
       setChat({ ...res.data, receiver });
     } catch (err) {
       console.log(err);
@@ -34,7 +34,7 @@ function Chat({ chats }) {
     if (!text) return;
     try {
       const res = await axios.post(
-        `http://localhost:8800/api/messages/${chat.id}`,
+        `https://api-deploy-j18f.onrender.com/api/messages/${chat.id}`,
         { text },
         { withCredentials: true }
     );
@@ -52,7 +52,7 @@ function Chat({ chats }) {
   useEffect(() => {
     const read = async () => {
       try {
-        await axios.put(`http://localhost:8800/api/chats/${chat.id}`);
+        await axios.put(`https://api-deploy-j18f.onrender.com/api/chats/${chat.id}`);
       } catch (err) {
         console.log(err);
       }
