@@ -13,8 +13,9 @@ function SinglePage() {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
   const [saved,setSaved] = useState(post.isSaved);
-  const handleClick = () =>{
-    navigate("/list")
+  const handleClick = async() =>{
+    const res = await axios.post("https://api-deploy-j18f.onrender.com/api/chats/",{receiverId: post.userId },{ withCredentials: true })
+    navigate("/profile")
   }
   const handleSave =async () => {
     if (!currentUser) {
