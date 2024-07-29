@@ -31,7 +31,7 @@ function NewPostPage() {
           images: images,
         },
         postDetails: {
-          desc: value,
+          desc: inputs.desc,
           utilities: inputs.utilities,
           pet: inputs.pet,
           income: inputs.income,
