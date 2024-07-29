@@ -30,8 +30,8 @@ function NewPostPage() {
           longitude: inputs.longitude,
           images: images,
         },
-        postDetails: {
-          desc: inputs.desc,
+        postDetail: {
+          desc: value,
           utilities: inputs.utilities,
           pet: inputs.pet,
           income: inputs.income,
