@@ -9,12 +9,21 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const socketUrl = import.meta.env.VITE_SOCKET_URL;
-    setSocket(io(socketUrl));
+    const newSocket = io("https://socket-deploy-t2q7.onrender.com", {
+      withCredentials: true,
+    });
+
+    setSocket(newSocket);
+
+    return () => {
+      newSocket.disconnect();
+    };
   }, []);
 
   useEffect(() => {
-  currentUser && socket?.emit("newUser", currentUser.id);
+    if (currentUser && socket) {
+      socket.emit("newUser", currentUser.id);
+    }
   }, [currentUser, socket]);
 
   return (
